@@ -1,8 +1,8 @@
 import Table from "cli-table3";
-import wrap from "wrap-ansi";
 
 import { COLUMNS, COMMAND_VARIABLES, COMMANDS, NO_DATA } from "@core/constants";
 import { consoleInfoLog } from "@core/utils";
+import { wrapText } from "@core/utils/wrap-text.utils";
 
 const HELP_TABLE_ROWS = [
   [
@@ -39,10 +39,10 @@ const helpCommand = async () => {
 
   table.push(
     ...HELP_TABLE_ROWS.map((element) => [
-      wrap(element[0], 10),
-      wrap(element[1], 30),
-      wrap(element[2], 50),
-      wrap(element[3], 40),
+      wrapText(element[0], 10),
+      wrapText(element[1], 30),
+      wrapText(element[2], 50),
+      wrapText(element[3], 40),
     ])
   );
 
