@@ -9,6 +9,4 @@ enum COLUMNS {
 
 const NO_DATA = "XXXX";
 
-const TABLE_MARGIN = 5;
-
-export { COLUMNS, NO_DATA, TABLE_MARGIN };
+export { COLUMNS, NO_DATA };
