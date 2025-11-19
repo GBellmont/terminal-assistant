@@ -21,7 +21,7 @@ npm run build
 3. Link the project on your machine
 
 ```Bash
-npm link
+npm link || npm install -g tass
 ```
 
 4. Verify link
@@ -44,20 +44,20 @@ Note: this command will be used to give execution permission to index.js so that
    a. `.zshrc`:
 
    ```Bash
-   ######################
-   # Terminal Assistant #
-   ######################
+    ######################
+    # Terminal Assistant #
+    ######################
 
-   # Captura o último comando digitado
+    # Captura o último comando digitado
     preexec() {
-    LAST_COMMAND="$1"
+        LAST_COMMAND="$1"
     }
 
     # Executa a sugestão de comandos
     precmd() {
-    if [[ -n "$LAST_COMMAND" && "$LAST_COMMAND" != tass* ]]; then
-        tass suggest "$LAST_COMMAND"
-    fi
+        if [[ -n "$LAST_COMMAND" && "$LAST_COMMAND" != tass* ]]; then
+            tass suggest command="$LAST_COMMAND"
+        fi
     }
    ```
 
